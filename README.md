@@ -19,22 +19,24 @@ Du möter 10 spelare som ett race. Målet är att komma vidare i varje race till
 - [ ] While logik laps max 3
 - [ ] list<Racers>
 
+
 ###### Race 1,2,3 extend (Race)
 
-- [ ] laplonger 
-- [ ] higherSpeed
+- [ ] lap
 
 ###### Race 4 extend (Race 1,2,3)
 
+- [ ] lapLonger
+- [ ] fastercars
+
 
 ###### Racers (abstract)
-- [ ] String [] names
-- [ ] int hastighet
+- [ ] String Name
+- [ ] int speed
 - [ ] int health
 - [ ] status ()
-- [ ] takeDamage ()
-- [ ] speedBoost ()
-- [ ] abstract randomPowers()
+- [ ] abstract takeDamage ()
+- [ ] abstract speedBoost ()
 - [ ] abstract playerspeed ()
 
 ###### Player1 Extend Racers 
@@ -43,10 +45,15 @@ Du möter 10 spelare som ett race. Målet är att komma vidare i varje race till
 - [ ] boostHeath ()
 - [ ] randomPowers ()
 - [ ] playerSpeed ()
+- [ ] randomPowers ()
 - [ ] if suprise: 
   - coin (VG)
   - speedBoost 
   - slowPlayersDown
+
+###### OtherRacers extend Racers
+
+- [ ] String [] Names
 
 
 
@@ -63,5 +70,5 @@ Du möter 10 spelare som ett race. Målet är att komma vidare i varje race till
 ###### Purchasable (interface)
 
 - [ ] Array Speedboost
-
+- [ ] Array CarHealth
 - [ ] Array FasterCar
