@@ -1,7 +1,7 @@
 # Inl-mningsuppgift_1_spel
 ## Upplägg spel 1 
 ### Tänkte göra ett spel inspererat från Super Mario
-Du möter 10 spelare som ett race. Målet är att komma vidare i varje race tills det sista racet. Du kommer få hjälpmedel på vägen som du kan välja att använda för att ta dig i mål snabbare. 
+Du möter 4 spelare som ett race. Målet är att komma vidare i varje race tills det sista racet. Du kommer få hjälpmedel på vägen som du kan välja att använda för att ta dig i mål snabbare. 
 
 ### Checklista
 ##### Klasser
