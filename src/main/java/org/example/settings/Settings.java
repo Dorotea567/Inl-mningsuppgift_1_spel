@@ -10,5 +10,6 @@ public class Settings {
     public static int randomSlowdown(){
         return (int)(Math.random()*100);
     }
+    }
 
-}
+

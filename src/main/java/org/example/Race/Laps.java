@@ -1,39 +1,58 @@
 package org.example.Race;
 
+import org.example.Racers.OtherRacers;
 import org.example.Racers.Racer1;
+import org.example.Racers.Racers;
 import org.example.settings.Settings;
 
+import java.util.Random;
+
 public class Laps extends Race {
-    @Override
-    public void startRacer1() {
-        System.out.println("Starting Racer 1");
+    int randomRacer1 = new Random().nextInt(3);
+    int randomOtherRacers = new Random().nextInt(3);
 
-        int laps = 1;
-        int maxLaps =3;
-
-        while (racer1.carIsFunctional() && racers.carIsFunctional()) {
-            System.out.println("Lap" + laps);
-
-            racer1.speedBoost(Settings.randomBoost());
-            for (int i = 1; i < otherRacers.length ; i++) {
-                otherRacers[i].speedBoost(Settings.randomBoost());
-            }
-
-            racer1.speedSlowdown(Settings.randomSlowdown());
-            for (int i = 1; i < otherRacers.length ; i++) {
-                otherRacers[i].speedSlowdown(Settings.randomSlowdown());
-            }
-
-            racer1.carHealthDamage();
-            for (int i = 1; i < otherRacers.length ; i++) {
-                otherRacers[i].carHealthDamage();
-            }
-
-            laps++;
-            if (laps > maxLaps) {
+    public void racer1box() {
+        System.out.println("You found a box");
+        switch (randomRacer1) {
+            case 0:
+                racer1.speedBoost(Settings.randomBoost());
                 break;
+            case 1:
+                racer1.coinsCollected(10);
+                break;
+                case 2:
+                    racer1.speedSlowdown(Settings.randomSlowdown());
+                    break;
+        }
+    }
+    public void otherplayerbox() {
+        switch (randomOtherRacers) {
+            case 0:
+                otherRacers.speedBoost(Settings.randomBoost());
+                break;
+                case 1:
+                    otherRacers.speedSlowdown(Settings.randomSlowdown());
+                    break;
+        }
+    }
+
+    @Override
+    public void laps() {
+        racer1 = new Racer1("Dorotea");
+        otherRacers = new OtherRacers("Players");
+        for (int laps = 1; laps < lapsPerRound ; laps ++) {
+            System.out.println("Det är " + laps + " lap");
+
+            racer1box();
+            otherplayerbox();
+            otherRacers.carHealthDamage();
+            racer1.carHealthDamage();
+            for (Racers racers: allRacers) {
+                racers.resetLap();
+                }
             }
 
         }
     }
-    }
+
+
