@@ -1,11 +1,31 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import org.example.Race.Laps;
+import org.example.Racers.OtherRacers;
+import org.example.Racers.Racer1;
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.println("Race");
+        testName();
+
+    }
+
+
+    static void testName() {
+        Racer1 racer1 = new Racer1();
+        racer1.setRacer1Name();
+        OtherRacers otherRacers = new OtherRacers();
+        otherRacers.setPlayersName();
+    }
+    static void testRacer() {
+        Racer1 racer1 = new Racer1();
+        racer1.setRacer1Name();
+        OtherRacers otherRacers = new OtherRacers();
+        otherRacers.setPlayersName();
+        Laps laps = new Laps();
+        laps.startRacer1();
+
+
+
+
     }
 }
