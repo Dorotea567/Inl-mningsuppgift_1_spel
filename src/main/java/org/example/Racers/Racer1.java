@@ -4,16 +4,14 @@ import javax.lang.model.element.Name;
 import java.util.Scanner;
 
 public class Racer1 extends Racers {
-    private String racer1Name;
     public Racer1(String name) {
         super(name);
-        this.racer1Name = name;
     }
 
     public void setRacer1Name(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Skriv vad du vill kalla Racer: ");
-        racer1Name= scanner.nextLine();
+        name= scanner.nextLine();
     }
 
     @Override
