@@ -3,8 +3,6 @@ package org.example.Racers;
 import java.util.Arrays;
 
 public class OtherRacers extends Racers {
-    private String[] otherRacersName;
-
     public OtherRacers(String name) {
         super(name);
     }
@@ -13,7 +11,7 @@ public class OtherRacers extends Racers {
     public void speedBoost(int speedBoost) {
             System.out.println(name+ " fick en speedboost på: " + speedBoost);
             speed += speedBoost;
-            System.out.println(name + "har en hastighet på: " + speed);
+            System.out.println(name + " har en hastighet på: " + speed);
 
 
     }

@@ -8,17 +8,11 @@ public class Racer1 extends Racers {
         super(name);
     }
 
-    public void setRacer1Name(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Skriv vad du vill kalla Racer: ");
-        name= scanner.nextLine();
-    }
-
     @Override
     public void speedBoost(int speedBoost) {
         System.out.println(name+ " fick en speedboost på: " + speedBoost);
         speed += speedBoost;
-        System.out.println(name + "har en hastighet på: " + speed);
+        System.out.println(name + " har en hastighet på: " + speed);
     }
     @Override
     public void speedSlowdown(int speedSlowdown) {
