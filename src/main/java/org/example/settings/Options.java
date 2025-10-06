@@ -9,7 +9,7 @@ public class Options {
     int tal;
 
     public int readInt() {
-        while (!scanner.hasNextInt()) {
+        while (!scanner.hasNextInt(4)) {
             System.out.println("Skriv ett heltal");
             scanner.next();
         }
@@ -33,6 +33,8 @@ public class Options {
             theRace.starRace();
         }
         else if (tal==2){
+            Shop shop = new Shop();
+            shop.shop1();
 
         }
         else if (tal==3){
