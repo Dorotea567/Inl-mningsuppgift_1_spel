@@ -9,10 +9,6 @@ public class Options {
     int tal;
 
     public int readInt() {
-        while (!scanner.hasNextInt(4)) {
-            System.out.println("Skriv ett heltal");
-            scanner.next();
-        }
         tal = scanner.nextInt();
         return tal;
     }

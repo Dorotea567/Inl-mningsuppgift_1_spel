@@ -9,8 +9,36 @@ import java.util.SortedMap;
 
 public class Shop extends Options {
     private Scanner scanner = new Scanner(System.in);
-    int tal;
-    public void shop1(){
+    private int tal;
+
+    public int readInt() {
+        tal = scanner.nextInt();
+        return tal;
+    }
+    public void chooseCar() {
+        switch (tal) {
+            case 1:
+                car1();
+                break;
+
+            case 2:
+                car2();
+                break;
+
+            case 3:
+                car3();
+                break;
+
+            case 4:
+                huvudmeny();
+                break;
+
+            default:
+                System.out.println("Skriv ett gitligt nummer");
+                break;
+        }
+    }
+    public void shop1() {
         System.out.println("-------------------------");
         System.out.println("--Välkomen till shoppen---");
         System.out.println("-------------------------");
@@ -21,31 +49,8 @@ public class Shop extends Options {
         System.out.println("---------Välj-------");
         chooseCar();
     }
-    public int readInt(){
-        while (!scanner.hasNextInt(4)) {
-            System.out.println("Skriv ett heltal");
-            scanner.next();
-        }
-        tal = scanner.nextInt();
-        return tal;
-    }
-    public void chooseCar() {
-        if (tal == 1) {
-            car1();
-        } else if (tal == 2) {
-            car2();
 
-        } else if (tal == 3) {
-            car3();
-
-        } else if (tal == 4) {
-            huvudmeny();
-        } else {
-            System.out.println("Välj ett av talen!");
-        }
-    }
-
-    public void car1 (){
+    public void car1() {
         System.out.println("---------------");
         System.out.println("Super Mario car");
         System.out.println("---------------");
@@ -57,89 +62,105 @@ public class Shop extends Options {
         buy1();
 
     }
-    public void buy1(){
-        if (tal == 1) {
-            System.out.println("-------------------------");
-            System.out.println("Grattis till din nya bil");
-            System.out.println("----Super mario car----");
-            System.out.println("------------------------");
-
-            car1Install();
-            huvudmeny();
-        }
-
-
-        else if (tal == 2) {
-            chooseCar();
-
-        } else if (tal == 3) {
-
-        }
-    }
-    public void car1Install(){
-        Racer1 r = new Racer1();
-        r.setCarHealth(150);
+    public void car1Install() {
+        Racer1 r = new Racer1("null");
         r.setSpeed(100);
+        r.setCarHealth(150);
+    }
+    public void buy1() {
+        switch (tal) {
+            case 1:
+                System.out.println("-------------------------");
+                System.out.println("Grattis till din nya bil");
+                System.out.println("----Super mario car----");
+                System.out.println("------------------------");
+                car1Install();
+                break;
+            case 2:
+                chooseCar();
+                break;
+            case 3:
+                huvudmeny();
+                break;
+            default:
+                System.out.println("Skriv ett gitligt nummer");
+                break;
+        }
     }
 
-    public void car2 (){
+    public void car2() {
         System.out.println("---------------");
         System.out.println("SpiderMan car");
         System.out.println("---------------");
-        System.out.println("Speed: 200");
+        System.out.println("Speed: 150");
         System.out.println("Health 200");
         System.out.println("---------------");
         System.out.println("[1] Köp bilen");
         System.out.println("[2] Gå tillbaka");
         buy2();
+
     }
-    public void buy2(){
-        if (tal == 1) {
-            System.out.println("-------------------------");
-            System.out.println("Grattis till din nya bil");
-            System.out.println("----Super mario car----");
-            System.out.println("------------------------");
-            car2Install();
-        }
-        else if (tal == 2) {
-            chooseCar();
-        }
-    }
-    public void car2Install(){
-        Racer1 r = new Racer1();
+    public void car2Install() {
+        Racer1 r = new Racer1("null");
+        r.setSpeed(150);
         r.setCarHealth(200);
-        r.setSpeed(200);
+    }
+    public void buy2() {
+        switch (tal) {
+            case 1:
+                System.out.println("-------------------------");
+                System.out.println("Grattis till din nya bil");
+                System.out.println("----SpiderMan car----");
+                System.out.println("------------------------");
+                car2Install();
+                break;
+            case 2:
+                chooseCar();
+                break;
+            case 3:
+                huvudmeny();
+                break;
+            default:
+                System.out.println("Skriv ett gitligt nummer");
+                break;
+        }
     }
 
-    public void car3 (){
+    public void car3() {
         System.out.println("---------------");
-        System.out.println("Fastest car");
+        System.out.println("The fastest car");
         System.out.println("---------------");
-        System.out.println("Speed: 300");
+        System.out.println("Speed: 200 ");
         System.out.println("Health 250");
         System.out.println("---------------");
         System.out.println("[1] Köp bilen");
         System.out.println("[2] Gå tillbaka");
         buy3();
+
     }
-    public void buy3(){
-        if (tal == 1) {
-            System.out.println("-----------------------");
-            System.out.println("Grattis till din nya bil");
-            System.out.println("----Super mario car----");
-            System.out.println("-----------------------");
-            car3Install();
-        }
-        else if (tal == 2) {
-            chooseCar();
-        }
-    }
-    public void car3Install(){
-        Racer1 r = new Racer1();
+    public void car3Install() {
+        Racer1 r = new Racer1("null");
+        r.setSpeed(200);
         r.setCarHealth(250);
-        r.setSpeed(300);
     }
-
-
-
+    public void buy3() {
+        switch (tal) {
+            case 1:
+                System.out.println("-------------------------");
+                System.out.println("Grattis till din nya bil");
+                System.out.println("----The fastest car----");
+                System.out.println("------------------------");
+                car3Install();
+                break;
+            case 2:
+                chooseCar();
+                break;
+            case 3:
+                huvudmeny();
+                break;
+            default:
+                System.out.println("Skriv ett gitligt nummer");
+                break;
+        }
+    }
 }

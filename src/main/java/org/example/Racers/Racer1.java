@@ -7,6 +7,12 @@ public class Racer1 extends Racers {
     public Racer1(String name) {
         super(name);
     }
+    public void setCarHealth(int health) {
+        this.carHealth = health;
+    }
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
 
 
     @Override
