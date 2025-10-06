@@ -31,41 +31,23 @@ public abstract class Race {
       racers.add(new OtherRacers("Racer 4"));
       racers.add(new OtherRacers("Racer 5"));
    }
-   /*
-   public void race () {
-       System.out.println("Starting Race...");
-       int round = 0;
-       int maxRounds = 5;
-       while (racers[0].carHealthIsFunctional() && racers[1].carHealthIsFunctional() &&
-               racers[2].carHealthIsFunctional()&& racers[3].carHealthIsFunctional()&&
-               racers[4].carHealthIsFunctional()&& racers[5].carHealthIsFunctional()) {
-           System.out.println("Round " + (round + 1) + " of " + maxRounds);
 
-         box();
-
-           round++;
-           if (round == maxRounds) {
-               break;
-           }
-           System.out.println("Game finished");
-       }
-   }
-
-    */
    public void box () {
        Random rand = new Random();
-       switch (rand.nextInt(3)) {
-           case 0:  for (int i = 0; i < racers.size(); i++) {
-              Racers r = racers.get(i);
-               r.speedBoost(Settings.randomBoost());
-           }
-           break;
-           case 1:  for (int i = 0; i < racers.size(); i++) {
-               Racers r = racers.get(i);
-               r.speedSlowdown(Settings.randomSlowdown());
+       switch (rand.nextInt(2)) {
+           case 0:
+               for (int i = 0; i < racers.size(); i++) {
+                   Racers r = racers.get(i);
+                   r.speedBoost(Settings.randomBoost());
+               }
                break;
-           }
+           case 1:
+               for (int i = 0; i < racers.size(); i++) {
+                   Racers r = racers.get(i);
+                   r.speedSlowdown(Settings.randomSlowdown());
+                   break;
+               }
        }
-   }
-   }
+   }}
+
 

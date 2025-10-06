@@ -24,19 +24,16 @@ public class Laps extends Race {
                 }
             }
             box();
-            lap++;
-            if(lap == lapsPerRound) {
-                break;
-            }
+
             for (Racers r : racers) {
                 r.resetLap();
             }
-            lapResult(lap);
+            }
             Settings.slowdownText();
 
 
         }
-    }
+
     public boolean finishLap(){
         for (int i = 0; i <racers.size() ; i++) {
             Racers racer = racers.get(i);
@@ -46,17 +43,32 @@ public class Laps extends Race {
         }
         return false;
     }
-    public void lapResult(int lap){
-        ArrayList<Racers> racers = new ArrayList<Racers>();
-        racers.sort(Comparator.comparing(Racers::getLapleft).reversed());
+    public void lapResult(int round){
+        ArrayList<Racers> list = new ArrayList<>(racers);
+        list.sort(Comparator.comparing(Racers::getLapleft).reversed());
 
-        System.out.println("Lap: " + lap + " resultat:");
+        System.out.println("Round: " + round + " resultat:");
         for (int i = 0; i <racers.size() ; i++) {
             Racers racer = racers.get(i);
-            System.out.println(i+1 + racer.getName() + racer.getLapleft()
-                    + lapDistance + racer.getCarHealth() + racer.getSpeed());
+            System.out.printf("%d. %-20s Progress: %d/%d | Health: %d | Speed: %d\n", i+1, racer.getName(),
+                    racer.getSpeed(),  lapDistance,
+                    racer.getLapleft(), racer.getCarHealth(), racer.getSpeed());
         }
     }
+    public void pointsforRounds () {
+        ArrayList<Racers> list = new ArrayList<>(racers);
+        list.sort(Comparator.comparing(Racers::getLapleft).reversed());
+
+        int[] points = {10, 8, 6, 4, 2};
+
+        System.out.println("Poäng för rundan: ");
+        for (int i = 0; i < list.size(); i++) {
+            list.get(i).addPoints(points[i]);
+            System.out.printf("%d. %-20s +%d poäng\n", i + 1, racers.get(i).getName() , points[i]);
+        }
     }
+
+    }
+
 
 

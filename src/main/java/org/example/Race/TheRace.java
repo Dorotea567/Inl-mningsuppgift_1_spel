@@ -18,18 +18,18 @@ public class TheRace extends Rounds {
 
     }
     public void standings(){
-        List<Racers> list = new ArrayList<Racers>();
+        List<Racers> list = new ArrayList<>(racers);
         list.sort(Comparator.comparing(Racers::getTotalPoints).reversed());
 
         System.out.println("Sammanlagda ställningen");
 
         for (int i = 0; i < list.size() ; i++) {
             Racers racer = list.get(i);
-            System.out.println(i+1 + racer.getTotalPoints()  + racer.getCoins());
+            System.out.println(i+1 +" "+ racer.getName()+ " points "+ racer.getTotalPoints() +" coins " + racer.getCoins());
         }
     }
     public void theWinner(){
-        List<Racers> list = new ArrayList<Racers>();
+        List<Racers> list = new ArrayList<>(racers);
         list.sort(Comparator.comparing(Racers::getTotalPoints).reversed());
 
         Racers winner = list.get(0);
@@ -42,7 +42,7 @@ public class TheRace extends Rounds {
         for (int i = 0; i < list.size(); i++) {
             Racers racer = list.get(i);
             String medal = i == 0 ? "Winner" : i == 1 ? " 2:an plats ": i == 3 ? " 3:e plats ": "";
-            System.out.println(medal + i+1 + racer.getName() + racer.getTotalPoints());
+            System.out.println(medal + i+1 + racer.getName() + " points: " +racer.getTotalPoints());
         }
     }
 }
