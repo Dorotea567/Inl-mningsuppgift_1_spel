@@ -9,16 +9,18 @@ import java.util.List;
 
 public class Laps extends Race {
 
-    public void eachLap(){
+    public void eachLap() {
 
-        for (int lap = 1; lap <=lapsPerRound ; lap++) {
+        for (int lap = 1; lap <= lapsPerRound; lap++) {
             System.out.println("lap " + lap + "av " + lapsPerRound);
+            Settings.slowdownText();
 
-            while (!finishLap()){
+            while (!finishLap()) {
                 for (Racers r : racers) {
-                    if (r.getCarHealth()>0 && r.getLapleft()<lapDistance){
-                        int carHealth = r.getCarHealth()/100;
-                        int progress = r.getSpeed()+carHealth;
+                    r.increaseSpeed();
+                    if (r.getCarHealth() > 0 && r.getLapleft() < lapDistance) {
+                        int carHealth = r.getCarHealth() / 100;
+                        int progress = r.getSpeed() + carHealth;
                         r.addLap(progress);
                     }
                 }
@@ -28,47 +30,64 @@ public class Laps extends Race {
             for (Racers r : racers) {
                 r.resetLap();
             }
-            }
-            Settings.slowdownText();
-
-
         }
+    }
 
-    public boolean finishLap(){
-        for (int i = 0; i <racers.size() ; i++) {
+
+    public boolean finishLap() {
+        for (int i = 0; i < racers.size(); i++) {
             Racers racer = racers.get(i);
-            if(racer.getLapleft() >= lapDistance){
-                return  true;
+            if (racer.getLapleft() >= lapDistance) {
+                return true;
             }
         }
         return false;
     }
-    public void lapResult(int round){
+
+    public void lapResult(int round) {
         ArrayList<Racers> list = new ArrayList<>(racers);
-        list.sort(Comparator.comparing(Racers::getLapleft).reversed());
+        list.sort(Comparator.comparing(Racers::getSpeed).reversed());
 
         System.out.println("Round: " + round + " resultat:");
-        for (int i = 0; i <racers.size() ; i++) {
+        for (int i = 0; i < racers.size(); i++) {
             Racers racer = racers.get(i);
-            System.out.printf("%d. %-20s Progress: %d/%d | Health: %d | Speed: %d\n", i+1, racer.getName(),
-                    racer.getSpeed(),  lapDistance,
-                    racer.getLapleft(), racer.getCarHealth(), racer.getSpeed());
+            System.out.println(racer.getName() +
+                    " Speed: " + racer.getSpeed() +
+                    racer.getLapleft() + " CarHealth: " +
+                    racer.getCarHealth());
         }
     }
-    public void pointsforRounds () {
+
+    public void pointsforRounds() {
         ArrayList<Racers> list = new ArrayList<>(racers);
-        list.sort(Comparator.comparing(Racers::getLapleft).reversed());
+        list.sort(Comparator.comparing(Racers::getSpeed).reversed());
 
         int[] points = {10, 8, 6, 4, 2};
 
         System.out.println("Poäng för rundan: ");
-        for (int i = 0; i < list.size(); i++) {
-            list.get(i).addPoints(points[i]);
-            System.out.printf("%d. %-20s +%d poäng\n", i + 1, racers.get(i).getName() , points[i]);
+        for  (int i = 0; i < list.size(); i++) {
+            Racers racer = list.get(i);
+            int point = (i< points.length) ? points[i] : 1;
+            racer.addPoints(point);
+            System.out.println(racer.getName() + " fick: " + point);
         }
     }
+}
 
-    }
+/*
+                System.out.println("Poäng för rundan: ");
+                for (int i = 0; i < list.size(); i++) {
+                    list.get(i).addPoints(points[i]);
+                    System.out.println(racers.get(i).getName() + "points: " + points[i]);
+                }
+
+            }
+
+ */
+
+
+
+
 
 
 

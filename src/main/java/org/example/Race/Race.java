@@ -35,17 +35,17 @@ public abstract class Race {
    public void box () {
        Random rand = new Random();
        switch (rand.nextInt(2)) {
-           case 0:
-               for (int i = 0; i < racers.size(); i++) {
-                   Racers r = racers.get(i);
-                   r.speedBoost(Settings.randomBoost());
-               }
-               break;
-           case 1:
-               for (int i = 0; i < racers.size(); i++) {
-                   Racers r = racers.get(i);
-                   r.speedSlowdown(Settings.randomSlowdown());
+           case 0: {
+                   for (Racers r : racers) {
+                       r.speedBoost(Settings.randomBoost());
+                   }
+                   }
                    break;
+           case 1: {
+                  for (Racers r : racers) {
+                      r.speedSlowdown(Settings.randomSlowdown());
+                  }
+               break;
                }
        }
    }}

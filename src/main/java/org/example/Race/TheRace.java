@@ -25,7 +25,7 @@ public class TheRace extends Rounds {
 
         for (int i = 0; i < list.size() ; i++) {
             Racers racer = list.get(i);
-            System.out.println(i+1 +" "+ racer.getName()+ " points "+ racer.getTotalPoints() +" coins " + racer.getCoins());
+            System.out.println(racer.getName()+ " points "+ racer.getTotalPoints() +" coins " + racer.getCoins());
         }
     }
     public void theWinner(){
@@ -39,10 +39,14 @@ public class TheRace extends Rounds {
         System.out.println("Samlade mynt: " + winner.getCoins());
 
         System.out.println("Scoreboard: ");
+        int [] points = {1,2,3,4,5};
+
         for (int i = 0; i < list.size(); i++) {
             Racers racer = list.get(i);
-            String medal = i == 0 ? "Winner" : i == 1 ? " 2:an plats ": i == 3 ? " 3:e plats ": "";
-            System.out.println(medal + i+1 + racer.getName() + " points: " +racer.getTotalPoints());
+            int point = (i< points.length) ? points[i] : 1;
+            racer.addPoints(point);
+            System.out.println(racer.getName() + " hamnade på plats: " + point);
         }
+
     }
 }

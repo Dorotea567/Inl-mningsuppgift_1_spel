@@ -13,10 +13,15 @@ public class Rounds extends Laps {
             System.out.println("Rounds: " + round + " av " + totalRounds);
             eachLap();
             for (Racers r : racers) {
-                r.carHealthDamage();
+                r.carHealthDamage(Settings.damageRandom());
             }
             lapResult(round);
             pointsforRounds();
+
+            for (Racers r : racers) {
+                r.roundNew();
+                r.addCoins(Settings.coinsRandom());
+            }
             if (round < totalRounds) {
                 System.out.println("Tryck Enter för nästa runda: ");
                 Scanner sc = new Scanner(System.in);

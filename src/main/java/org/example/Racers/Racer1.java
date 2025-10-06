@@ -22,12 +22,11 @@ public class Racer1 extends Racers {
 
     }
     @Override
-    public void carHealthDamage() {
-        int damage = 10;
+    public void carHealthDamage(int damage) {
         System.out.println(name + " körde på ett hinder på banan och tog skada: " + damage);
         carHealth -= damage;
         if (carHealthIsFunctional()) {
-            System.out.println(name + "s bil har nu " + carHealth + " kvar");
+            System.out.println(name + "s bil har nu " + carHealth/100);
         }
         else{
             carHealth = 0;

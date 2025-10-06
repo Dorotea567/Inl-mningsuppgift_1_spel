@@ -37,8 +37,10 @@ public class Options {
 
         }
         else if (tal==3){
-            System.out.println("Avsluta spel");
+            System.out.println("Spel avslutat");
         }
+        else System.out.println("Ange ett av talen");
+        huvudmeny ();
         }
     }
 

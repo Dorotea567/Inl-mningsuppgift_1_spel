@@ -12,7 +12,7 @@ public abstract class Racers {
 
     public Racers(String name) {
         this.name = name;
-        this.speed = Settings.randomSpeed();
+        this.speed = 0;
         this.carHealth = 100;
         this.coins = 0;
         this.totalPoints = 0;
@@ -39,7 +39,10 @@ public abstract class Racers {
     }
 
     public boolean carHealthIsFunctional() {
-        return carHealth > 0;
+        return carHealth >=0;
+    }
+    public boolean speedIsFunctional() {
+        return speed >=0;
     }
     public void resetLap() {
         lapleft= 0;
@@ -54,19 +57,20 @@ public abstract class Racers {
         coins += amount;
     }
 
+
     public void roundNew(){
         speed = Settings.randomSpeed();
         carHealth = 100;
         lapleft = 0;
     }
-    public void racerInfo(){
-        System.out.println(name + " speed: " + speed+ " carhealth: " + carHealth + "lapleft: " + lapleft );
+    public void increaseSpeed(){
+        speed += 10;
     }
 
 
     public abstract void speedBoost(int speedBoost);
     public abstract void speedSlowdown(int speedSlowdown);
-    public abstract void carHealthDamage();
+    public abstract void carHealthDamage(int carHealthDamage);
     public abstract void coinsCollected(int amount);
 
 
