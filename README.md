@@ -1,74 +1,132 @@
 # Inl-mningsuppgift_1_spel
 ## Upplägg spel 1 
 ### Tänkte göra ett spel inspererat från Super Mario
-Du möter 4 spelare som ett race. Målet är att komma vidare i varje race tills det sista racet. Du kommer få hjälpmedel på vägen som du kan välja att använda för att ta dig i mål snabbare. 
+Du möter 4 spelare som ett race. Målet är att komma först i varje race och samla så mycket poäng som möjligt. Du kommer få hjälpmedel på vägen som du kan välja att använda för att ta dig i mål snabbare. 
 
 ### Checklista
+
+ ---------
+
 ##### Klasser
 
 - [ ] Race
 - [ ] Racers
-- [ ] Help
+- [ ] Settings 
+- [ ] Opptions 
 - [ ] Shop (VG)
 
 ###### Race (abstract)
 
+- [ ] ArrayList<Racers>
+- [ ] int totalRounds
+- [ ] int lapsPerRound
+- [ ] int lapDistance
 - [ ] int finishLine 
-- [ ] start 
-- [ ] wile logik rounds max 5
-- [ ] While logik laps max 3
-- [ ] list<Racers>
 
+- [ ] public void nameRacer
+- [ ] public void box
 
-###### Race 1,2,3 extend (Race)
+###### Laps extend (Race)
 
-- [ ] lap
+- [ ] public void eachLap 
+- [ ] public boolean finishLap
+- [ ] public void lapResult(int round)
+- [ ] public void pointsForRounds 
 
-###### Race 4 extend (Race 1,2,3)
+###### Rounds extend (Lap)
 
-- [ ] lapLonger
-- [ ] fastercars
+- [ ] public void eachRounds 
 
+###### TheRace extend (Lap)
+
+- [ ] public void startRace
+- [ ] public void standings
+- [ ] public void theWinner
+
+---------
 
 ###### Racers (abstract)
 - [ ] String Name
 - [ ] int speed
-- [ ] int health
-- [ ] status ()
-- [ ] abstract takeDamage ()
-- [ ] abstract speedBoost ()
-- [ ] abstract playerspeed ()
+- [ ] int carHealth
+- [ ] int coins
+- [ ] int totalsPoints
+- [ ] int lapLeft
 
-###### Player1 Extend Racers 
+- [ ] public String getName
+- [ ] int getSpeed
+- [ ] int getCarHealth
+- [ ] int getCoins
+- [ ] int getTotalPoints
+- [ ] int getLapleft
 
-- [ ] int suprise 
-- [ ] boostHeath ()
-- [ ] randomPowers ()
-- [ ] playerSpeed ()
-- [ ] randomPowers ()
-- [ ] if suprise: 
-  - coin (VG)
-  - speedBoost 
-  - slowPlayersDown
+- [ ] public boolen carHealthIsFunctional
+- [ ] public void resetLap
+- [ ] public void addLap
+- [ ] public void addPoints
+- [ ] public void addCoins
+
+- [ ] public void roundNew
+- [ ] public void increaseSpeed
+
+- [ ] abstract takeDamage 
+- [ ] abstract speedBoost 
+- [ ] abstract playerspeed 
+- [ ] abstract coinsCollected
+
+###### Racer1 Extend Racers 
+
+- [ ] public void setCarHealth
+- [ ] public void setSpeed
+
+- [ ] abstract takeDamage
+- [ ] abstract speedBoost
+- [ ] abstract playerspeed
+- [ ] abstract coinsCollected
+
 
 ###### OtherRacers extend Racers
 
-- [ ] String [] Names
+- [ ] abstract takeDamage
+- [ ] abstract speedBoost
+- [ ] abstract playerspeed
+- [ ] abstract coinsCollected
+
+------------
+
+###### Settings (interface)
+
+- [ ] static int randomSpeed
+- [ ] static int randomBoos
+- [ ] static int randomDamage
+- [ ] static void slowDownText
+- [ ] static int coinsRandom
+- [ ] static int damageRandom
+
+-------
+
+###### Options
+
+- [ ] readInt
+- [ ] huvudmeny
+- [ ] kontroll 
+
+###### Shop extends Options (VG)
+
+- [ ] readInt
+- [ ] public void chooseCar
+- [ ] public void shop1
+
+- [ ] public void car1
+- [ ] public void car1Install
+- [ ] public void buy1
+- 
+- [ ] public void car2
+- [ ] public void car2Install
+- [ ] public void buy2
+
+- [ ] public void car3
+- [ ] public void car3Install
+- [ ] public void buy3
 
 
-
-
-###### Helper (interface)
-
-- [ ] randomBoot 
-- [ ] randomDamage
-- [ ] randomSpeed
-- [ ] timer 
-
-##### VG 
-
-###### Purchasable (interface)
-
-- [ ] Array Speedboost
-- [ ] Array CarHealth
-- [ ] Array FasterCar

@@ -13,7 +13,7 @@ public abstract class Racers {
     public Racers(String name) {
         this.name = name;
         this.speed = 0;
-        this.carHealth = 100;
+        this.carHealth = 200;
         this.coins = 0;
         this.totalPoints = 0;
         this.lapleft = 0;
@@ -41,9 +41,6 @@ public abstract class Racers {
     public boolean carHealthIsFunctional() {
         return carHealth >=0;
     }
-    public boolean speedIsFunctional() {
-        return speed >=0;
-    }
     public void resetLap() {
         lapleft= 0;
     }
@@ -60,7 +57,6 @@ public abstract class Racers {
 
     public void roundNew(){
         speed = Settings.randomSpeed();
-        carHealth = 100;
         lapleft = 0;
     }
     public void increaseSpeed(){

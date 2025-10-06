@@ -19,7 +19,6 @@ public abstract class Race {
    public Race () {
        racers = new ArrayList<>();
    }
-
     public void nameRacer() {
        System.out.print("Enter name for race 1: ");
        Scanner sc = new Scanner (System.in);
@@ -31,7 +30,6 @@ public abstract class Race {
       racers.add(new OtherRacers("Racer 4"));
       racers.add(new OtherRacers("Racer 5"));
    }
-
    public void box () {
        Random rand = new Random();
        switch (rand.nextInt(2)) {

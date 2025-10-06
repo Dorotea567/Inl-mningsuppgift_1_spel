@@ -1,11 +1,9 @@
 package org.example.settings;
 
-import org.example.Race.TheRace;
-import org.example.Racers.Racer1;
-import org.example.Racers.Racers;
 
+import org.example.Racers.Racer1;
 import java.util.Scanner;
-import java.util.SortedMap;
+
 
 public class Shop extends Options {
     private Scanner scanner = new Scanner(System.in);
@@ -16,6 +14,7 @@ public class Shop extends Options {
         return tal;
     }
     public void chooseCar() {
+        readInt();
         switch (tal) {
             case 1:
                 car1();
@@ -68,10 +67,12 @@ public class Shop extends Options {
         r.setCarHealth(150);
     }
     public void buy1() {
+        readInt();
         switch (tal) {
             case 1:
                 System.out.println("-------------------------");
                 System.out.println("Grattis till din nya bil");
+                System.out.println("--------------------------");
                 System.out.println("----Super mario car----");
                 System.out.println("------------------------");
                 car1Install();
@@ -106,10 +107,12 @@ public class Shop extends Options {
         r.setCarHealth(200);
     }
     public void buy2() {
+        readInt();
         switch (tal) {
             case 1:
                 System.out.println("-------------------------");
                 System.out.println("Grattis till din nya bil");
+                System.out.println("--------------------------");
                 System.out.println("----SpiderMan car----");
                 System.out.println("------------------------");
                 car2Install();
@@ -144,10 +147,12 @@ public class Shop extends Options {
         r.setCarHealth(250);
     }
     public void buy3() {
+        readInt();
         switch (tal) {
             case 1:
                 System.out.println("-------------------------");
                 System.out.println("Grattis till din nya bil");
+                System.out.println("--------------------------");
                 System.out.println("----The fastest car----");
                 System.out.println("------------------------");
                 car3Install();

@@ -22,22 +22,24 @@ public class Options {
         kontroll();
 
     }
-    public void kontroll (){
+    public void kontroll () {
         readInt();
-        if (tal==1){
-            TheRace theRace = new TheRace();
-            theRace.starRace();
+        switch (tal) {
+            case 1:
+                TheRace theRace = new TheRace();
+                theRace.starRace();
+                break;
+            case 2:
+                Shop shop = new Shop();
+                shop.shop1();
+                break;
+            case 3:
+                System.out.println("Spel avslutat");
+                break;
+            default:
+                System.out.println("Ange ett av talen");
+                break;
         }
-        else if (tal==2){
-            Shop shop = new Shop();
-            shop.shop1();
-
-        }
-        else if (tal==3){
-            System.out.println("Spel avslutat");
-        }
-        else System.out.println("Ange ett av talen");
-        huvudmeny ();
-        }
+    }
     }
 

@@ -32,8 +32,6 @@ public class Laps extends Race {
             }
         }
     }
-
-
     public boolean finishLap() {
         for (int i = 0; i < racers.size(); i++) {
             Racers racer = racers.get(i);
@@ -43,7 +41,6 @@ public class Laps extends Race {
         }
         return false;
     }
-
     public void lapResult(int round) {
         ArrayList<Racers> list = new ArrayList<>(racers);
         list.sort(Comparator.comparing(Racers::getSpeed).reversed());
@@ -59,7 +56,6 @@ public class Laps extends Race {
                     racer.getCarHealth());
         }
     }
-
     public void pointsforRounds() {
         ArrayList<Racers> list = new ArrayList<>(racers);
         list.sort(Comparator.comparing(Racers::getSpeed).reversed());
@@ -78,16 +74,6 @@ public class Laps extends Race {
     }
 }
 
-/*
-                System.out.println("Poäng för rundan: ");
-                for (int i = 0; i < list.size(); i++) {
-                    list.get(i).addPoints(points[i]);
-                    System.out.println(racers.get(i).getName() + "points: " + points[i]);
-                }
-
-            }
-
- */
 
 
 
