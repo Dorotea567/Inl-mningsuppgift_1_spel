@@ -48,7 +48,9 @@ public class Laps extends Race {
         ArrayList<Racers> list = new ArrayList<>(racers);
         list.sort(Comparator.comparing(Racers::getSpeed).reversed());
 
+        System.out.println("------------------------------");
         System.out.println("Round: " + round + " resultat:");
+        System.out.println("------------------------------");
         for (int i = 0; i < racers.size(); i++) {
             Racers racer = racers.get(i);
             System.out.println(racer.getName() +
@@ -64,7 +66,9 @@ public class Laps extends Race {
 
         int[] points = {10, 8, 6, 4, 2};
 
-        System.out.println("Poäng för rundan: ");
+        System.out.println("--------------------");
+        System.out.println("--Poäng för rundan--");
+        System.out.println("--------------------");
         for  (int i = 0; i < list.size(); i++) {
             Racers racer = list.get(i);
             int point = (i< points.length) ? points[i] : 1;

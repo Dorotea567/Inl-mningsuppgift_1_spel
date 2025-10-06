@@ -8,6 +8,7 @@ public class Racer1 extends Racers {
         super(name);
     }
 
+
     @Override
     public void speedBoost(int speedBoost) {
         System.out.println(name+ " fick en speedboost på: " + speedBoost);

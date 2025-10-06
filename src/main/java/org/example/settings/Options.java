@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class Options {
     private Scanner scanner = new Scanner(System.in);
-    String number;
     int tal;
 
     public int readInt() {

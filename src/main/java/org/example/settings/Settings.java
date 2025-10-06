@@ -29,7 +29,7 @@ public class Settings {
         return (int) (Math.random() * (100-50));
     }
     public static int damageRandom (){
-        return (int) (Math.random() * (10-1));
+        return (int) (Math.random() * (5-1));
     }
 }
 
